@@ -4,9 +4,14 @@
 <title>Auric Shimmer</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="stylesheet.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 <style>
+* {
+  box-sizing: border-box;
+}
 body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
 body {font-size:16px;}
 .w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
@@ -15,6 +20,33 @@ body {font-size:16px;}
   display: flex;
 }
 
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 24.99999%;
+}
 .column {
   flex: 100%;
 }
@@ -22,6 +54,47 @@ body {font-size:16px;}
   flex: 100%;
   align-content: center;
   text-align: center;
+}
+
+.menu {
+  float: left;
+  width: 20%;
+  text-align: center;
+  height: 100%;
+}
+
+.menu a {
+  background-color: #e5e5e5;
+  padding: 8px;
+  margin-top: 7px;
+  display: block;
+  width: 100%;
+  color: black;
+  height: 100%;
+}
+
+.left {
+  padding: 20px;
+  float: left;
+  width: 50%; /* The width is 20%, by default */
+  height: 100%;
+}
+.right {
+  background-color: #e5e5e5;
+  float: left;
+  width: 50%;
+  padding: 15px;
+  margin-top: 7px;
+  text-align: center;
+  height: 100%;
+}
+
+@media only screen and (max-width: 700px) {
+  /* For mobile phones: */
+  .menu, .main, .right, .left {
+    width: 100%;
+    height: 100%;
+  }
 }
 th{
   flex:100%;
@@ -51,7 +124,8 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     <a href="#crosscontainment" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">SCP Cross Containment</a> 
     <a href="#ZenBoarder" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">ZenBoarder</a> 
     <a href="#thepast" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">The Past</a> 
-    <a href="#thefuture" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">The Future</a> 
+    <a href="#modelviewer" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Model Viewer</a> 
+    <a href="#gallery" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Gallery</a> 
     <a href="#commisions" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Commisions</a> 
     <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
   </div>
@@ -97,21 +171,22 @@ tr:nth-child(even) {background-color: #f2f2f2;}
   </div>
 
   <!-- Knockout -->
-    <div class="w3-container" id="knockout" style="margin-top:75px">
+    <div class="w3-container" id="knockout" style="overflow:auto;">
     <h1 class="w3-xxxlarge w3-text-gold"><b>Knockout.</b></h1>
     <hr style="width:50px;border:5px solid rgb(255, 162, 0)" class="w3-round">
-    <div class="row" style="grid-row: auto;">
-        <div class="column" style="padding: 10px; height: 400px">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/WdFVzbkKkO4" title="Knockout | Evo Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div style="overflow: auto; height: 100%;">
+
+        <div class="left" style="padding: 10px; height:480px; ">
+            <iframe width="100%"  height="100%" src="https://www.youtube.com/embed/WdFVzbkKkO4" title="Knockout | Evo Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        <div class="column" style="padding: 10px;">
+        <div class="right" style="padding: 10px;">
             <h2>A fighting game based in the heart of an iconic animation community.</h2>
             <p>Knockout is an IKEMEN Fighting game with an extensive history. Started by myself and Dillon Murphy in 2017, Knockout has now been featured at multiple tournaments and events, including making a brief appearance in EVO, the world's largest fighting game event.</p>
             <p>I directed and directly programmed a majority of the code before moving on to other projects, and occasionally dipped back in to help as needed. </p>
         </div>
-    </div>
-    <div class="row" style="grid-row: auto;">
-        <div class="column" style="padding: 10px;">
+      </div>
+      <div style="overflow: auto;">
+        <div class="left">
             <h1 style="text-align: right;">Roles:</h1>
 
             <h3 style="text-align: right;">-Lead Programmer</h3>
@@ -119,31 +194,34 @@ tr:nth-child(even) {background-color: #f2f2f2;}
             <h3 style="text-align: right;">-Additonal Combat Designer</h3>
             <h3 style="text-align: right;">-Consultant</h3>
         </div>
-        <div class="column" style="padding: 10px;">
+        <div class="right">
             <video src = "assets/koreel.mp4" autoplay muted loop style="width: 100%; height:80%; "></video>
         </div>
-    </div>
-    </div> 
+      </div>
+  </div> 
   
 
   <!-- SCP Cross Containment https://www.youtube.com/watch?v=URtnkZOMMAU-->
     <div class="w3-container" id="crosscontainment" style="margin-top:75px">
     <h1 class="w3-xxxlarge w3-text-gold"><b>SCP: Cross Containment.</b></h1>
     <hr style="width:50px;border:5px solid rgb(255, 162, 0)" class="w3-round">
-    <div class="row" style="grid-row: auto;">
-        <div class="column" style="padding: 10px;">
-            <h2>The SCP Fighting game.</h2>
-            <p>This is an immersive fighting game set within the SCP Universe. Featuring 18 characters from across the universe,SCP: Cross Containment is a product of mnay years of intense development. The game frequently found itself at over 3,000 upvotes on the SCP Subreddit per post, quickly gaining noteriety and attention. This is my largest project to date, and my first time working with a team. I aim to return to this game with more knowledge and experience in the future because I know the potential for this game is still untapped. </p>
-        </div>
-        <div class="column" style="padding: 10px; height: 400px">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/URtnkZOMMAU" title="SCP: CROSS CONTAINMENT ABLE REDUX TRAILER" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <div style="overflow: auto; height: 100%;">
+        <div style="overflow: auto; height: 100%;">
+
+          <div class="left" style="padding: 10px;">
+              <h2>The SCP Fighting game.</h2>
+              <p>This is an immersive fighting game set within the SCP Universe. Featuring 18 characters from across the universe,SCP: Cross Containment is a product of mnay years of intense development. The game frequently found itself at over 3,000 upvotes on the SCP Subreddit per post, quickly gaining noteriety and attention. This is my largest project to date, and my first time working with a team. I aim to return to this game with more knowledge and experience in the future because I know the potential for this game is still untapped. </p>
+          </div>
+          <div class="left" style="padding: 10px; height: 400px">
+              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/URtnkZOMMAU" title="SCP: CROSS CONTAINMENT ABLE REDUX TRAILER" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
         </div>
     </div>
-    <div class="row" style="grid-row: auto;">
-        <div class="column" style="padding: 10px;">
+    <div style="overflow: auto;height: 100;">
+        <div class="left" style="padding: 10px;">
             <video src = "assets/crosscontainment.mp4" autoplay muted loop style="width: 100%; height:80%; "></video>
         </div>
-        <div class="column" style="padding: 10px;">
+        <div class="right" style="padding: 10px;">
             <h1>Roles:</h1>
             <h3>-Lead Programmer</h3>
             <h3>-Director</h3>
@@ -159,13 +237,11 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     <div class="w3-container" id="ZenBoarder" style="margin-top:75px; outline: 2px black;">
     <h1 class="w3-xxxlarge w3-text-gold"><b>ZenBoarder.</b></h1>
     <hr style="width:50px;border:5px solid rgb(255, 162, 0)" class="w3-round">
-    <div class="row" style="grid-row: auto;">
-    </div>
-    <div class="row" style="grid-row: auto;">
-        <div class="column" style="padding: 10px;">
-            <video src = "assets/skatetrailerthing.mp4" autoplay muted loop style="height:80%; "></video>
+      <div style="overflow: auto; height: 100%;">
+        <div class="left" style="padding: 10px;">
+            <video src = "assets/skatetrailerthing.mp4" autoplay muted loop style="max-width: 100%; max-height:80%; "></video>
         </div>
-          <div class="column" style="padding: 10px;">
+          <div class="right" style="padding: 10px;">
               <h1>A Freeform, skill based skating game.</h1>
               <p>My current project. This is my first foray into mobile app development and dealing with monetization systems. I set out with the initial goal to make a simple skating game in the same vein as Temple Runner and ended up with something interesting and complex. </p>
               <h2>Roles:</h2>
@@ -185,7 +261,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
     <hr style="width:50px;border:5px solid rgb(255, 162, 0)" class="w3-round">
     <p>These are my past projects.</p>
     <div class="row" style="grid-row: auto;">
-         <table class="table">
+         <table class="table" style="width: 100%;">
             <tr>
                 <th>Name</th>
                 <th>Description</th>
@@ -205,10 +281,10 @@ tr:nth-child(even) {background-color: #f2f2f2;}
             </tr>
             <tr>
                 <td>
-                  <p>Models</p>
+                  <p>placeholder</p>
                   <img src="assets/someonesober.jpg" style="height: 210px;">
                 </td>
-                <td>A model viewer that will show you my past works. There are limited animations in there too, as well as some special effects and costumes included, too. Take a look! </td>
+                <td>big placeholder </td>
                 <td>
                     <a href="assets/Godot/ModelViewer/modelviewer.html"> Model Viewer</a>
                 </td>
@@ -216,80 +292,111 @@ tr:nth-child(even) {background-color: #f2f2f2;}
             </tr>
         </table> 
     </div>
-    </div> 
-  <!-- The Future f
-    <div class="w3-container" id="thefuture" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-gold"><b>The Future.</b></h1>
-    <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>These are my current, unreleased projects. Some of these are demos that can be played here!</p>
-    <div class="row" style="grid-row: auto;">
-         <table class="table">
-            <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Link</th>
-                <th>Category</th>
-            </tr>
-            <tr>
-                <td>Someone Sober Drive My Car</td>
-                <td>A heartfelt and eventful </td>
-                <td>
-                    <a href="https://trogenhearse.itch.io/someonesoberdrivemycar"> itch.io</a>
-                </td>
-                <td>Game Jam Game</td>
-            </tr>
-        </table> 
+    <div>
+      
     </div>
-    </div> 
--->
-  <!-- Commisions
-    <div class="w3-container" id="commisions" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-gold"><b>Commisions.</b></h1>
-    <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>Looking for an art piece, asset or model? I'm available for commisions of all types! See below for some of my work.</p>
-    <div class="row" style="grid-row: auto;">
-         <table class="table">
-            <tr>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Link</th>
-                <th>Category</th>
-            </tr>
-            <tr>
-                <td>Someone Sober Drive My Car</td>
-                <td>A heartfelt and eventful </td>
-                <td>
-                    <a href="https://trogenhearse.itch.io/someonesoberdrivemycar"> itch.io</a>
-                </td>
-                <td>Game Jam Game</td>
-            </tr>
-        </table> 
+</div>
+<h1 class="w3-xxxlarge w3-text-gold"><b>Model Viewer.</b></h1>
+<hr style="width:50px;border:5px solid rgb(255, 162, 0)" class="w3-round">
+<p>Here's a model viewer of some of my past work. You'll find some humans, monsters, effects and animations for all of the above.</p>
+<div class="w3-container" id="modelviewer">
+  
+    <iframe src="assets/Godot/ModelViewer/modelviewer.html" width="100%"height = 600>
+    </iframe>
+
+
+</div>
+
+<h1 class="w3-xxxlarge w3-text-gold"><b>Gallery.</b></h1>
+<hr style="width:50px;border:5px solid rgb(255, 162, 0)" class="w3-round">
+<p>Here's a gallery of my 2D Art: </p>
+
+<div class="w3-container" style="overflow: auto;" id="gallery">
+
+  <div class="left">
+    <div class="gallery">
+      <a target="_blank" href="assets/Art2D/AlaniDialogueAtlas.png">
+        <img src="assets/Art2D/AlaniDialogueAtlas.png" alt="Northern Lights">
+      </a>
     </div>
-    </div> 
- -->
-  <!-- Contact
-  <div class="w3-container" id="contact" style="margin-top:75px">
-    <h1 class="w3-xxxlarge w3-text-gold"><b>Contact.</b></h1>
-    <hr style="width:50px;border:5px solid red" class="w3-round">
-    <p>Do you want us to style your home? Fill out the form and fill me in with the details :) We love meeting new people!</p>
-    <form action="/action_page.php" target="_blank">
-      <div class="w3-section">
-        <label>Name</label>
-        <input class="w3-input w3-border" type="text" name="Name" required>
-      </div>
-      <div class="w3-section">
-        <label>Email</label>
-        <input class="w3-input w3-border" type="text" name="Email" required>
-      </div>
-      <div class="w3-section">
-        <label>Message</label>
-        <input class="w3-input w3-border" type="text" name="Message" required>
-      </div>
-      <button type="submit" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom">Send Message</button>
-    </form>  
   </div>
- -->
-<!-- End page content -->
+  <div class="left">
+    <div class="gallery">
+      <a target="_blank" href="assets/Art2D/Ariyah.png">
+        <img src="assets/Art2D/Ariyah.png" alt="Northern Lights">
+      </a>
+    </div>
+  </div>
+  <div class="left">
+    <div class="gallery">
+      <a target="_blank" href="assets/Art2D/Dr.Mariam Blackwell.png">
+        <img src="assets/Art2D/Dr.Mariam Blackwell.png" alt="Northern Lights">
+      </a>
+    </div>
+  </div>
+  <div class="left">
+    <div class="gallery">
+      <a target="_blank" href="assets/Art2D/EGOBlackwell.png">
+        <img src="assets/Art2D/EGOBlackwell.png" alt="Northern Lights">
+      </a>
+    </div>
+  </div>
+  <div class="left">
+    <div class="gallery">
+      <a target="_blank" href="assets/Art2D/EGOOsmund.png">
+        <img src="assets/Art2D/EGOOsmund.png" alt="Northern Lights">
+      </a>
+    </div>
+  </div>
+  <div class="left">
+    <div class="gallery">
+      <a target="_blank" href="assets/Art2D/EuclidShipModel.png">
+        <img src="assets/Art2D/EuclidShipModel.png" alt="Northern Lights">
+      </a>
+    </div>
+  </div>
+  <div class="left">
+    <div class="gallery">
+      <a target="_blank" href="assets/Art2D/Hadrian.png">
+        <img src="assets/Art2D/Hadrian.png" alt="Northern Lights">
+      </a>
+    </div>
+  </div>
+  <div class="left">
+    <div class="gallery">
+      <a target="_blank" href="assets/Art2D/Mean Gene, Forger of Machines.png">
+        <img src="assets/Art2D/Mean Gene, Forger of Machines.png" alt="Northern Lights">
+      </a>
+    </div>
+  </div>
+  <div class="left">
+    <div class="gallery">
+      <a target="_blank" href="assets/Art2D/OminusScourge.png">
+        <img src="assets/Art2D/OminusScourge.png" alt="Northern Lights">
+      </a>
+    </div>
+  </div>
+  <div class="left">
+    <div class="gallery">
+      <a target="_blank" href="assets/Art2D/VigilHalfHollow.png">
+        <img src="assets/Art2D/VigilHalfHollow.png" alt="Northern Lights">
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<h1 class="w3-xxxlarge w3-text-gold"><b>Commisions.</b></h1>
+<hr style="width:50px;border:5px solid rgb(255, 162, 0)" class="w3-round">
+<p>Interested in purchasing a commision from me? Here's my rates: </p>
+  <div class="w3-container" id="commisions">
+</div>
+
+<h1 class="w3-xxxlarge w3-text-gold"><b>Contact.</b></h1>
+<hr style="width:50px;border:5px solid rgb(255, 162, 0)" class="w3-round">
+<p>Want to reach out?.</p>
+</div>
+  <div class="w3-container" id="contact">
 </div>
 
 <!-- W3.CSS Container -->
@@ -314,7 +421,9 @@ function onClick(element) {
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
 }
-</script>
 
+</script>
+    
 </body>
+
 </html>
