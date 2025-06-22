@@ -88,7 +88,40 @@ div.desc {
   text-align: center;
   height: 100%;
 }
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
 
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
 @media only screen and (max-width: 700px) {
   /* For mobile phones: */
   .menu, .main, .right, .left {
@@ -132,9 +165,9 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 </nav>
 
 <!-- Top menu on small screens -->
-<header class="w3-container w3-top w3-hide-large w3-rgb(255, 162, 0) w3-xlarge w3-padding">
+<header class="w3-container w3-top w3-hide-large w3-rgb(255, 162, 0) w3-xlarge w3-padding" style="background-color: goldenrod;">
   <a href="javascript:void(0)" class="w3-button w3-rgb(255, 162, 0) w3-margin-right" onclick="w3_open()">☰</a>
-  <span>Auric Shimmer</span>
+  <span style="color: white;  ">Auric Shimmer</span>
 </header>
 
 <!-- Overlay effect when opening sidebar on small screens -->
@@ -271,7 +304,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
             <tr>
                 <td>
                   <p>Someone Sober Drive My Car</p>
-                  <img src="assets/someonesober.jpg" style="height: 210px;">
+                  <img src="assets/someonesober.jpg" style="height: 100%;">
                 </td>
                 <td>A heartfelt and eventful trip through the Midwest united states. This is a visual novel with 4 different endings, each of which reflects the different effects that two childhood friends have on each other when they're forced to spend the day driving together. </td>
                 <td>
@@ -282,7 +315,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
             <tr>
                 <td>
                   <p>placeholder</p>
-                  <img src="assets/someonesober.jpg" style="height: 210px;">
+                  <img src="assets/someonesober.jpg" style="height: 100%;">
                 </td>
                 <td>big placeholder </td>
                 <td>
@@ -292,14 +325,11 @@ tr:nth-child(even) {background-color: #f2f2f2;}
             </tr>
         </table> 
     </div>
-    <div>
-      
-    </div>
-</div>
-<h1 class="w3-xxxlarge w3-text-gold"><b>Model Viewer.</b></h1>
+  </div>
+<h1 class="w3-xxxlarge w3-text-gold" id="modelviewer"><b>Model Viewer.</b></h1>
 <hr style="width:50px;border:5px solid rgb(255, 162, 0)" class="w3-round">
 <p>Here's a model viewer of some of my past work. You'll find some humans, monsters, effects and animations for all of the above.</p>
-<div class="w3-container" id="modelviewer">
+<div class="w3-container">
   
     <iframe src="assets/Godot/ModelViewer/modelviewer.html" width="100%"height = 600>
     </iframe>
@@ -307,23 +337,37 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 
 </div>
 
-<h1 class="w3-xxxlarge w3-text-gold"><b>Gallery.</b></h1>
+<h1 class="w3-xxxlarge w3-text-gold" id="gallery"><b>Gallery.</b></h1>
 <hr style="width:50px;border:5px solid rgb(255, 162, 0)" class="w3-round">
 <p>Here's a gallery of my 2D Art: </p>
 
-<div class="w3-container" style="overflow: auto;" id="gallery">
+<div class="w3-container" style="overflow: auto;">
 
   <div class="left">
     <div class="gallery">
-      <a target="_blank" href="assets/Art2D/AlaniDialogueAtlas.png">
-        <img src="assets/Art2D/AlaniDialogueAtlas.png" alt="Northern Lights">
+      <a target="_blank" href="assets/Art2D/Knight.png">
+        <img src="assets/Art2D/Knight.png" alt="A wisened sage, taken before her time.">
       </a>
     </div>
   </div>
   <div class="left">
     <div class="gallery">
       <a target="_blank" href="assets/Art2D/Ariyah.png">
-        <img src="assets/Art2D/Ariyah.png" alt="Northern Lights">
+        <img src="assets/Art2D/Ariyah.png" alt="A patient upstart, ">
+      </a>
+    </div>
+  </div>
+  <div class="left">
+    <div class="gallery">
+      <a target="_blank" href="assets/Art2D/Hughie.png">
+        <img src="assets/Art2D/Hughie.png" alt="Northern Lights">
+      </a>
+    </div>
+  </div>
+  <div class="left">
+    <div class="gallery">
+      <a target="_blank" href="assets/Art2D/Prophet.png">
+        <img src="assets/Art2D/Prophet.png" alt="Northern Lights">
       </a>
     </div>
   </div>
@@ -364,22 +408,8 @@ tr:nth-child(even) {background-color: #f2f2f2;}
   </div>
   <div class="left">
     <div class="gallery">
-      <a target="_blank" href="assets/Art2D/Mean Gene, Forger of Machines.png">
-        <img src="assets/Art2D/Mean Gene, Forger of Machines.png" alt="Northern Lights">
-      </a>
-    </div>
-  </div>
-  <div class="left">
-    <div class="gallery">
       <a target="_blank" href="assets/Art2D/OminusScourge.png">
         <img src="assets/Art2D/OminusScourge.png" alt="Northern Lights">
-      </a>
-    </div>
-  </div>
-  <div class="left">
-    <div class="gallery">
-      <a target="_blank" href="assets/Art2D/VigilHalfHollow.png">
-        <img src="assets/Art2D/VigilHalfHollow.png" alt="Northern Lights">
       </a>
     </div>
   </div>
@@ -390,7 +420,96 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 <hr style="width:50px;border:5px solid rgb(255, 162, 0)" class="w3-round">
 <p>Interested in purchasing a commision from me? Here's my rates: </p>
   <div class="w3-container" id="commisions">
-</div>
+    <div id="Sketch" class="tabcontent">
+      <div id="row" style="height: 100%;">
+        <table>
+          <td>
+            <img src="assets/Art2D/CommSketch.png" width="100%">
+          </td>
+          <td>
+            
+            <h1 style="text-align: center;">Sketch</h1>
+
+            <h3 style="text-align: center;">Headshot: $40</h3>
+            <h3 style="text-align: center;">Bust: $50</h3>
+            <h3 style="text-align: center;">Full: $60</h3>
+          </td>
+        </table>
+      
+      </div>
+    </div>
+
+    <div id="Flat" class="tabcontent">
+      <div id="row" style="height: 100%;">
+        <table>
+          <td>
+            <img src="assets/Art2D/Mean Gene, Forger of Machines.png" width="100%">
+          </td>
+          <td>
+            
+            <h1 style="text-align: center;">Colored, Flat Shading</h1>
+
+            <h3 style="text-align: center;">Headshot: $60</h3>
+            <h3 style="text-align: center;">Bust: $80</h3>
+            <h3 style="text-align: center;">Full: $100</h3>
+          </td>
+        </table>
+      
+      </div>
+    </div>
+
+    <div id="Shaded" class="tabcontent">
+      <div id="row" style="height: 100%;">
+        <table>
+          <td>
+            <img src="assets/Art2D/AlaniDialogueAtlas.png" width="100%">
+          </td>
+          <td>
+            
+            <h1 style="text-align: center;">Colored, Shaded, Rendered</h1>
+
+            <h3 style="text-align: center;">Headshot: $80</h3>
+            <h3 style="text-align: center;">Bust: $100</h3>
+            <h3 style="text-align: center;">Full: $120</h3>
+          </td>
+        </table>
+      
+      </div>
+    </div>
+
+    <div class="tab">
+      <tab>
+        <button class="tablinks" onclick="openTab(event, 'Sketch')">Sketch</button>
+        <button class="tablinks" onclick="openTab(event, 'Flat')">Flat</button>
+        <button class="tablinks" onclick="openTab(event, 'Shaded')"id="defaultOpen">Shaded</button>
+      </tab>
+
+      <script>
+        function openTab(evt, TabName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(TabName).style.display = "block";
+        evt.currentTarget.className += " active";
+      } 
+      document.getElementById("defaultOpen").click();
+      </script>
+    </div>
+
+
 
 <h1 class="w3-xxxlarge w3-text-gold"><b>Contact.</b></h1>
 <hr style="width:50px;border:5px solid rgb(255, 162, 0)" class="w3-round">
