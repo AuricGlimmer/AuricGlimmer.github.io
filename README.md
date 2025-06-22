@@ -1,2 +1,2 @@
-# AuricShimmer
+# AuricGlimmer
 
